@@ -11,8 +11,6 @@ let babylon = require('babylon');
 let traverse = require('babel-traverse').default;
 let enhancedResolve = require('enhanced-resolve');
 
-process.title = "browser";
-
 let target = 'CLJS_TARGET';
 let filename = fs.realpathSync(path.resolve(__dirname, 'JS_FILE'));
 let mainFields = MAIN_ENTRIES;
