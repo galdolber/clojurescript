@@ -11,12 +11,12 @@ let babylon = require('babylon');
 let traverse = require('babel-traverse').default;
 let enhancedResolve = require('enhanced-resolve');
 
+process.title = "browser";
+
 let target = 'CLJS_TARGET';
 let filename = fs.realpathSync(path.resolve(__dirname, 'JS_FILE'));
 let mainFields = MAIN_ENTRIES;
 let aliasFields = target === 'nodejs' ? [] : ['browser'];
-
-process.title = target === 'nodejs' ? process.title : "browser";
 
 // https://github.com/egoist/konan
 let getDeps = function (src, {dynamicImport = true, parse = {sourceType: 'module', plugins: '*'}} = {}) {
